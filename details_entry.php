@@ -13,13 +13,13 @@ if(!$conn)
     die("Connection Failed:" .mysqli_connect_error());
 }
 
-// if(isset($_POST[`save`]))  // on submission
-// {
-    $first_name = $_POST[`first_name`];
-    $last_name = $_POST[`last_name`];
-    $gender = $_POST[`gender`];
-    $email = $_POST[`email`];
-    $phone = $_POST[`phone`];
+if(isset($_POST['save']))  // on submission
+{
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
 
     $sql_query = "INSERT INTO entry_details(first_name,last_name,gender,email,phone) VALUES ('$first_name','$last_name','$gender','$email','$phone')";
 
@@ -33,5 +33,5 @@ if(!$conn)
     }
 
     mysqli_close($conn);
-// }
+}
 ?>
